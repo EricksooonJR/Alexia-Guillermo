@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuestra Boda | Alexia & Guillermo</title>
+    <link href="img/icon.ico" rel="icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Pantalla de apertura -->
+    <div class="intro" id="intro">
+      <div class="intro__content">
+        <p class="intro__label">Desliza hacia arriba</p>
+        <h1 class="names">
+          <span class="top-name">Alexia</span>
+
+          <span class="middle">
+            <span class="line"></span>
+            &
+            <span class="line"></span>
+          </span>
+
+          <span class="bottom-name">Guillermo</span>
+        </h1>
+        <p class="intro__date">15 de agosto de 2026</p>
+      </div>
+
+      <div class="scroll-indicator">
+        <span></span>
+      </div>
+    </div>
+
+    <!-- Audio opcional -->
+    <button class="music-btn" id="musicBtn" aria-label="Reproducir música">
+      ♪
+    </button>
+    <audio id="bgMusic" preload="auto" playsinline webkit-playsinline loop>
+      <!-- Reemplaza por tu archivo -->
+      <source src="music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <main class="site" id="site">
+      <!-- Hero -->
+      <section class="hero reveal">
+        <div class="container">
+          <p class="tag">Nuestra Boda</p>
+          <h2 class="names">
+            <span class="top-name">Alexia</span>
+
+            <span class="middle">
+              <span class="line"></span>
+              &
+              <span class="line"></span>
+            </span>
+
+            <span class="bottom-name">Guillermo</span>
+          </h2>
+          <p class="hero__text">
+            Es un honor invitarte a formar parte de este gran día.
+          </p>
+          <p class="hero__date">15 de agosto de 2026 · 17:00 hrs</p>
+        </div>
+      </section>
+
+      <!-- Cuenta regresiva -->
+      <section class="countdown section reveal">
+        <div class="container">
+          <h3 class="section-title countdown-title">
+            El momento está por llegar!
+            <span>Solo quedan...</span>
+          </h3>
+          <div class="countdown__grid">
+            <div class="countdown__item">
+              <span id="days">00</span>
+              <small>Días</small>
+            </div>
+            <div class="countdown__item">
+              <span id="hours">00</span>
+              <small>Horas</small>
+            </div>
+            <div class="countdown__item">
+              <span id="minutes">00</span>
+              <small>Minutos</small>
+            </div>
+            <div class="countdown__item">
+              <span id="seconds">00</span>
+              <small>Segundos</small>
+            </div>
+          </div>
+          <p class="countdown-message">Para nuestra boda!</p>
+        </div>
+      </section>
+
+      <!-- Frase -->
+      <section class="quote section section--soft reveal">
+        <div class="container">
+          <p class="quote__text">“ Comienza nuestro para siempre.”</p>
+        </div>
+      </section>
+
+      <!-- Itinerario -->
+      <section class="countdown section reveal">
+        <div class="container">
+          <div class="timeline-header">
+            <div class="timeline-divider">
+              <span></span>
+              ✦
+              <span></span>
+            </div>
+
+            <h3 class="section-title">Itinerario</h3>
+
+            <p class="timeline-subtitle">
+              Esta noche está pensada para convertirse en un recuerdo
+              inolvidable contigo.
+            </p>
+          </div>
+
+          <div class="timeline-vertical">
+            <!-- EVENTO 1 -->
+            <article class="timeline-event reveal">
+              <div class="timeline-event__dot"></div>
+
+              <div class="timeline-event__icon">
+                <img src="img/church.png" alt="Ceremonia" />
+              </div>
+
+              <div class="timeline-event__content">
+                <span class="timeline-event__hour">5:00 PM</span>
+                <h4>Misa</h4>
+              </div>
+            </article>
+
+            <!-- EVENTO 2 -->
+            <article class="timeline-event reveal">
+              <div class="timeline-event__dot"></div>
+
+              <div class="timeline-event__icon">
+                <img src="img/champagne.png" alt="Recepción" />
+              </div>
+
+              <div class="timeline-event__content">
+                <span class="timeline-event__hour">7:00 PM</span>
+                <h4>Recepción</h4>
+              </div>
+            </article>
+
+            <!-- EVENTO 3 -->
+            <article class="timeline-event reveal">
+              <div class="timeline-event__dot"></div>
+
+              <div class="timeline-event__icon">
+                <img src="img/dinner.png" alt="Cena" />
+              </div>
+
+              <div class="timeline-event__content">
+                <span class="timeline-event__hour">8:00 PM</span>
+                <h4>Cena</h4>
+              </div>
+            </article>
+
+            <!-- EVENTO 4 -->
+            <article class="timeline-event reveal">
+              <div class="timeline-event__dot"></div>
+
+              <div class="timeline-event__icon">
+                <img src="img/dance.png" alt="Baile" />
+              </div>
+
+              <div class="timeline-event__content">
+                <span class="timeline-event__hour">9:00 PM</span>
+                <h4>Fiesta</h4>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galería -->
+      <section class="gallery section section--soft reveal" id="galeria">
+        <div class="container">
+          <h3 class="section-title">Galería</h3>
+
+          <div class="gallery-heading">
+            <p>Nuestras Fotos</p>
+
+            <div class="gallery-heading__divider">
+              <span></span>
+
+              <img
+                class="locations-icon-img"
+                src="img/gallery.png"
+                alt="Galería"
+              />
+
+              <span></span>
+            </div>
+          </div>
+
+          <div class="film-gallery">
+            <button
+              class="film-nav film-nav--up"
+              id="galleryPrev"
+              aria-label="Foto anterior"
+            >
+              ↑
+            </button>
+
+            <div class="film-frame">
+              <div class="film-strip" id="filmStrip">
+                <div class="film-slide active" data-index="0">
+                  <img src="img/5.jpeg" alt="Foto 1" />
+                </div>
+
+                <div class="film-slide" data-index="1">
+                  <img src="img/7.jpeg" alt="Foto 2" />
+                </div>
+
+                <div class="film-slide" data-index="2">
+                  <img src="img/8.jpeg" alt="Foto 3" />
+                </div>
+
+                <div class="film-slide" data-index="3">
+                  <img src="img/11.jpeg" alt="Foto 4" />
+                </div>
+
+                <div class="film-slide" data-index="4">
+                  <img src="img/12.jpeg" alt="Foto 5" />
+                </div>
+
+                <div class="film-slide" data-index="5">
+                  <img src="img/13.jpeg" alt="Foto 6" />
+                </div>
+
+                <div class="film-slide" data-index="6">
+                  <img src="img/14.jpeg" alt="Foto 7" />
+                </div>
+
+                <div class="film-slide" data-index="7">
+                  <img src="img/15.jpeg" alt="Foto 8" />
+                </div>
+
+                <div class="film-slide" data-index="8">
+                  <img src="img/16.jpeg" alt="Foto 9" />
+                </div>
+
+                <div class="film-slide" data-index="9">
+                  <img src="img/17.jpeg" alt="Foto 10" />
+                </div>
+
+                <div class="film-slide" data-index="10">
+                  <img src="img/22.jpeg" alt="Foto 11" />
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="film-nav film-nav--down"
+              id="galleryNext"
+              aria-label="Foto siguiente"
+            >
+              ↓
+            </button>
+          </div>
+
+          <div class="gallery-actions">
+            <button class="btn" id="openGalleryModal">Galería Completa</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal galería -->
+      <div class="gallery-modal" id="galleryModal">
+        <button
+          class="gallery-modal__close"
+          id="closeGalleryModal"
+          aria-label="Cerrar galería"
+        >
+          &times;
+        </button>
+
+        <button
+          class="gallery-modal__nav gallery-modal__nav--left"
+          id="modalPrev"
+          aria-label="Anterior"
+        >
+          &#10094;
+        </button>
+
+        <div class="gallery-modal__content">
+          <img id="modalImage" src="" alt="Foto ampliada" />
+          <p id="modalCaption"></p>
+          <div class="gallery-thumbs" id="galleryThumbs"></div>
+        </div>
+
+        <button
+          class="gallery-modal__nav gallery-modal__nav--right"
+          id="modalNext"
+          aria-label="Siguiente"
+        >
+          &#10095;
+        </button>
+      </div>
+
+      <!-- Dress code -->
+      <section class="dresscode section reveal">
+        <div class="container">
+          <h3 class="section-title">Dress Code</h3>
+
+          <div class="dresscode-heading">
+            <span></span>
+
+            <img
+              class="dresscode-icon-img"
+              src="img/dress-code.png"
+              alt="Dress code"
+            />
+
+            <span></span>
+          </div>
+
+          <!-- TARJETA (convertida a sistema consistente) -->
+          <div class="location-card reveal">
+            <p class="card__big">Formal / Etiqueta</p>
+
+            <p>Queremos verte espectacular en este día tan especial.</p>
+
+            <p class="note">
+              Se reserva el color blanco, ivory y tonos similares al vestido de
+              la novia.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ubicaciones -->
+      <section class="locations section section--soft reveal">
+        <div class="container">
+          <h3 class="section-title">Ubicaciones</h3>
+
+          <div class="locations-heading">
+            <span></span>
+
+            <img
+              class="locations-icon-img"
+              src="img/location-pin.png"
+              alt="Ubicación"
+            />
+
+            <span></span>
+          </div>
+
+          <!-- GRID NUEVO (unifica diseño) -->
+          <div class="info-grid">
+            <!-- Ceremonia -->
+            <div class="location-card reveal">
+              <h4>Ceremonia</h4>
+              <p>Iglesia de nuestra señora del Carmen</p>
+              <p>
+                Av. Reforma Nte. 200, Centro de la Ciudad, 75700 Tehuacán, Pue.
+              </p>
+              <a
+                class="btn"
+                href="https://maps.app.goo.gl/w9gm1WwVsuK5KoM87"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Abrir en Google Maps
+              </a>
+            </div>
+
+            <!-- Recepción -->
+            <div class="location-card reveal">
+              <h4>Recepción</h4>
+              <p>Quinta Real</p>
+              <p>
+                Cam. Real, Santa María Coapan, Sta María Coapan, 75857 Tehuacán,
+                Pue.
+              </p>
+              <a
+                class="btn"
+                href="https://maps.app.goo.gl/4z2N38ecBoB1w9Az8"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Abrir en Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Menciones especiales -->
+      <section class="gifts section reveal">
+        <div class="container">
+          <h3 class="section-title">Con el cariño de nuestras familias:</h3>
+
+          <!-- GRID UNIFICADO -->
+          <div class="info-grid">
+            <!-- Padres de la novia -->
+            <div class="mention reveal">
+              <span>Padres de la novia</span>
+              <strong class="parents-names">
+                <span>Mariza Reyes Guerrero</span>
+                <span class="parents-and">&</span>
+                <span>Juan Carlos Mora Bravo</span>
+              </strong>
+            </div>
+
+            <!-- Padres del novio -->
+            <div class="mention reveal">
+              <span>Padres del novio</span>
+              <strong class="parents-names">
+                <span>Guillermina Escobedo Franco</span>
+                <span class="parents-and">&</span>
+                <span>Luis N. Toribio Martínez</span>
+              </strong>
+            </div>
+
+            <!-- Padrinos -->
+            <div class="mention reveal">
+              <span>Padrinos</span>
+              <strong class="parents-names">
+                <span>Carolina Olaya Mora</span>
+                <span class="parents-and">&</span>
+                <span>Fredy Hernández Márquez</span>
+              </strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mesa de regalos -->
+      <section class="gifts section section--soft reveal">
+        <div class="container">
+          <h3 class="section-title">Mesa de Regalos</h3>
+
+          <div class="info-grid">
+            <div class="mention reveal">
+              <p class="card__big">Tu presencia es nuestro mejor regalo</p>
+
+              <p>
+                Si deseas tener un detalle con nosotros, puedes elegir
+                cualquiera de nuestras mesas de regalos.
+              </p>
+
+              <p><strong>Número de evento (Liverpool):</strong> 51977901</p>
+
+              <!-- BOTONES -->
+              <div class="gift-buttons">
+                <a
+                  class="btn"
+                  href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51977901"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Liverpool
+                </a>
+
+                <a
+                  class="btn"
+                  href="https://www.amazon.com.mx/wedding/guest-view/1IQN8TL3R9FC5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Amazon
+                </a>
+              </div>
+
+              <p class="note">
+                Gracias por acompañarnos y ser parte de este momento tan
+                especial.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RSVP -->
+      <section class="rsvp section reveal">
+        <div class="container">
+          <h3 class="section-title">Confirma tu asistencia</h3>
+          <div class="rsvp-divider">
+            <span></span>
+
+            <img class="rsvp-heart" src="img/heart.png" alt="Corazón" />
+
+            <span></span>
+          </div>
+          <p class="rsvp__text">
+            Nos llenaría de alegría que nos acompañes en este día tan especial,
+            donde celebraremos el amor, la unión y el comienzo de una nueva
+            etapa juntos.
+          </p>
+          <h3 class="section-title">No faltes!</h3>
+          <a
+            class="btn btn--dark"
+            href="https://wa.me/522381547385?text=%C2%A1Hola%20Wendy%20y%20Elias!%20Qu%C3%A9%20alegr%C3%ADa%20compartir%20este%20momento%20con%20ustedes.%20Confirmo%20con%20gusto%20mi%20asistencia%20a%20la%20celebraci%C3%B3n%20el%20d%C3%ADa%20s%C3%A1bado%2011%20de%20julio.%0A%C2%A1Muchas%20gracias%20por%20la%20invitaci%C3%B3n!"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Confirmar a la Novia
+          </a>
+          <a
+            class="btn btn--dark"
+            href="https://wa.me/522383932763?text=%C2%A1Hola%20Wendy%20y%20Elias!%20Qu%C3%A9%20alegr%C3%ADa%20compartir%20este%20momento%20con%20ustedes.%20Confirmo%20con%20gusto%20mi%20asistencia%20a%20la%20celebraci%C3%B3n%20el%20d%C3%ADa%20s%C3%A1bado%2011%20de%20julio.%0A%C2%A1Muchas%20gracias%20por%20la%20invitaci%C3%B3n!"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Confirmar al Novio
+          </a>
+        </div>
+      </section>
+
+      <footer class="footer reveal">
+        <p>Un recuerdo en construcción para un día inolvidable.</p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
