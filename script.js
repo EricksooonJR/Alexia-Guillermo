@@ -499,9 +499,9 @@ filmFrame?.addEventListener('touchend', (e) => {
 
 /* ===== ANIMACIONES SCROLL ===== */
 
-const revealElements = document.querySelectorAll(".reveal");
+const reveals = document.querySelectorAll(".reveal");
 
-const revealOnScroll = new IntersectionObserver(
+const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -514,6 +514,13 @@ const revealOnScroll = new IntersectionObserver(
   }
 );
 
-revealElements.forEach((el) => {
-  revealOnScroll.observe(el);
+reveals.forEach((el, index) => {
+  // alterna dirección automáticamente
+  if (index % 2 === 0) {
+    el.classList.add("reveal-left");
+  } else {
+    el.classList.add("reveal-right");
+  }
+
+  observer.observe(el);
 });
