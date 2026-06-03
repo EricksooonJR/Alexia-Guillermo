@@ -524,3 +524,125 @@ reveals.forEach((el, index) => {
 
   observer.observe(el);
 });
+
+/* ===== RSVP ===== */
+
+const attendance = document.getElementById("attendance");
+const attendanceFields = document.getElementById("attendanceFields");
+
+const adultsInput = document.getElementById("adults");
+const childrenInput = document.getElementById("children");
+const childrenGroup = childrenInput?.closest(".form-group");
+
+const adultsLimit = document.getElementById("adultsLimit");
+const childrenLimit = document.getElementById("childrenLimit");
+
+const params = new URLSearchParams(window.location.search);
+
+/* 🔥 LÍMITES DESDE URL */
+const maxAdults = parseInt(params.get("ad") || 2);
+const maxChildren = parseInt(params.get("ni") || 0);
+
+/* aplicar límites HTML */
+adultsInput.max = maxAdults;
+childrenInput.max = maxChildren;
+
+/* mostrar texto dinámico */
+adultsLimit.textContent = `Máximo permitido: ${maxAdults} adulto(s)`;
+childrenLimit.textContent = `Máximo permitido: ${maxChildren} niño(s)`;
+
+/* ocultar niños si no aplica */
+if (maxChildren === 0 && childrenGroup) {
+  childrenGroup.style.display = "none";
+}
+
+/* mostrar/ocultar campos */
+attendance.addEventListener("change", () => {
+  if (attendance.value === "No") {
+    attendanceFields.classList.add("hidden");
+  } else {
+    attendanceFields.classList.remove("hidden");
+  }
+});
+
+/* SUBMIT */
+document.getElementById("rsvpForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("guestName").value;
+const assist = attendance.value;
+const phone = document.getElementById("phone").value;
+
+/* 👇 TOMAMOS VALORES REALES */
+let adultsValue = Number(adultsInput.value || 0);
+let childrenValue = Number(childrenInput.value || 0);
+
+/* 🔥 SI NO ASISTE, FORZAR 0 */
+if (assist === "No") {
+  adultsValue = 0;
+  childrenValue = 0;
+
+  adultsInput.value = 0;
+  childrenInput.value = 0;
+}
+
+  /* validación */
+  if (Number(adults) > maxAdults) {
+    alert(`Solo se permiten ${maxAdults} adultos.`);
+    return;
+  }
+
+  if (Number(children) > maxChildren) {
+    alert(`Solo se permiten ${maxChildren} niños.`);
+    return;
+  }
+
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxl-Pm3kun_hPGJcx3g0szwUpDpBU4bu6ljdjnJfZcSiI_iywpm9C-HeDGakc55M62o/exec";
+
+  try {
+
+    const formData = new FormData();
+
+    formData.append("name", name);
+    formData.append("assist", assist);
+formData.append("adults", adultsValue);
+formData.append("children", childrenValue);
+    formData.append("phone", phone);
+
+    await fetch(SCRIPT_URL, {
+      method: "POST",
+      body: formData
+    });
+
+  } catch (error) {
+    console.error("Error Sheets:", error);
+  }
+
+  /* ===== WHATSAPP ===== */
+
+  let message = "";
+
+  if (assist === "Si") {
+    message =
+`Hola Ale & Guillermo,
+
+Confirmo mi asistencia para el gran día.
+
+Nombre: ${name}
+Adultos: ${adults}
+Niños: ${children}
+Teléfono: ${phone}`;
+  } else {
+    message =
+`Hola Ale & Guillermo,
+
+Desafortunadamente, no podré asistir.
+
+Nombre: ${name}`;
+  }
+
+  window.open(
+    `https://wa.me/522383889393?text=${encodeURIComponent(message)}`,
+    "_blank"
+  );
+});
