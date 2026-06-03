@@ -629,8 +629,8 @@ formData.append("children", childrenValue);
 Confirmo mi asistencia para el gran día.
 
 Nombre: ${name}
-Adultos: ${adults}
-Niños: ${children}
+Adultos: ${adultsValue}
+Niños: ${childrenValue}
 Teléfono: ${phone}`;
   } else {
     message =
